@@ -18,15 +18,12 @@
   margin: auto; 
   min-width: 50%;
   min-height: 50%;
-  /*z-index: -1;*/
 }
 
 #logo {
   background:url(images/teachyourselflogo.png) no-repeat top center;
-/*width:200px;*/
   height:200px;
   text-indent:-9999px;
-/*align-self: center;*/
 }
 
 #start {
@@ -54,7 +51,6 @@
   margin-top: 50px;
 }
 
-
 ul { 
   list-style-type: none; 
   float: left; 
@@ -67,19 +63,37 @@ body {
 }
 
 table {
-    width: 600px;
-    height: 600px;
+  width: 600px;
+  height: 600px;
 }
 
 td {
-    width: 100px;
-    height: 100px;
-    outline: 2px solid;
-    float: left;
+  width: 100px;
+  height: 100px;
+  outline: 2px solid;
+  float: left;
 }
 
-.flip-container:click .flipper, .flip-container.click .flipper, .flip-container.flip .flipper {
-  transform: rotateY(180deg);
+#grid {
+  float: center;
+}
+
+.backQorA {
+  float:left;
+  margin: 10px;
+  background: blue;
+  width: 100px
+  height: 100px;
+  cursor: pointer;
+}
+
+.frontImage {
+  float:left;
+  margin: 10px;
+  background-image: url(images/botticelli-Question.jpg);
+  width: 100px
+  height: 100px;
+  cursor: pointer;
 }
 
 
