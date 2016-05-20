@@ -23,6 +23,6 @@ The game starts with a blank grid. To play, simple navigate to (url), and click 
 
 ##Bugs and Fixes
 
-* 1: Currently, I am in the process of fixing the matching logic. also - 
+* 1: Currently, I am in the process of fixing the matching logic. 
 * 2: Reset button clears board, but page has to reload to generate new game board. 
 * 3: Add nav bar with Switch background and switch deck button
