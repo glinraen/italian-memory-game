@@ -4,7 +4,7 @@ This repository holds the files for a simple concetnration-style game that rende
 
 The game board is generated with random content, when the Start or Reset button is clicked, allowing a new grid to be displayed every time. 
 
-It uses HTML, Javascript, CSS for the game board with a small ammount of Jquery. 
+It uses HTML, Javascript, CSS for the game board with a small amount of Jquery. 
 
 The game starts with a blank grid. To play, simple navigate to (url), and click Start. When all tiles are face up, you have learned some basic Italian and won the game. Click Reset button to clear the board and play again. 
 
