@@ -2,7 +2,7 @@
 
 ##Description
 
-This repository holds the files for a simple concetnration-style game that renders in the web browser. 
+This repository holds the files for a simple concentration-style game that renders in the web browser. 
 
 Planned features include click a tile and get a phrase in English or Italian, try to get a match by clicking another tile. Continue 
 to click pairs until the board tiles are all face-up. That is a win. There are two buttons, Start and Reset. 
