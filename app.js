@@ -5,19 +5,20 @@ window.onload = function() {
 	addListeners();
 };
 
-var arr = [["Come stai", "How are you"], 
-	["Piacere di conosciarti", "Nice to meet you"],
-	["Andiamo", "Lets go"], 
-	["E gentile da parta sua", "That is nice of you"],
-	["Ciao", "Hello or Goodbye"],
-	["A presto", "See you soon"],
-	["Capisce? / Capisci?","Do you understand? (formal informal)"],
-	["Non m'importa.", "It doesn't matter."], 
-	["Ho fame", "I'm hungry"], 
-	["Ho sete", "I'm thirsty."], 
-	["Ho freddo.", "I'm cold"], 
-	["Ho caldo", "I'm hot"]
-];
+// var arr = [
+// 	["Come stai", "How are you"], 
+// 	["Piacere di conosciarti", "Nice to meet you"],
+// 	["Andiamo", "Lets go"], 
+// 	["E gentile da parta sua", "That is nice of you"],
+// 	["Ciao", "Hello or Goodbye"],
+// 	["A presto", "See you soon"],
+// 	["Capisce? / Capisci?","Do you understand? (formal informal)"],
+// 	["Non m'importa.", "It doesn't matter."], 
+// 	["Ho fame", "I'm hungry"], 
+// 	["Ho sete", "I'm thirsty."], 
+// 	["Ho freddo.", "I'm cold"], 
+// 	["Ho caldo", "I'm hot"]
+// ];
 
 questions = {
 	"Come stai": "How are you",
@@ -37,13 +38,32 @@ questions = {
 
 
 //need tiles to have correct question and answer content.
-var tileContent  = ["Come stai?", "How are you?",
-"Piacere di conosciarti", "Nice to meet you",
-"Andiamo", "Let's go", "E gentile da parta sua", "That is nice of you", "Ciao", "Hello or Goodbye",
-"A presto", "See you soon", "Capisce? / Capisci?",
-"Do you understand? (formal informal)", "Non m'importa.", "It doesn't matter.", 
-"Ho fame", "I'm hungry", "Ho sete", "I'm thirsty.", "Ho freddo.", "I'm cold", "Ho caldo",
-"I'm hot"];
+var tileContent  = [
+"Come stai?", 
+"How are you?",
+"Piacere di conosciarti", 
+"Nice to meet you",
+"Andiamo", 
+"Let's go", 
+"E gentile da parta sua", 
+"That is nice of you", 
+"Ciao", 
+"Hello or Goodbye",
+"A presto", 
+"See you soon", 
+"Capisce? / Capisci?",
+"Do you understand? (formal informal)", 
+"Non m'importa.", 
+"It doesn't matter.", 
+"Ho fame", 
+"I'm hungry", 
+"Ho sete", 
+"I'm thirsty.", 
+"Ho freddo.", 
+"I'm cold", 
+"Ho caldo",
+"I'm hot"
+];
 
 //var italian = ["Come stai?", "Piacere di conosciarti", "Andiamo", "E gentile da parta sua", "Ciao", "A presto", 
 // "Capisce? / Capisci?", "Non m'importa.", "Ho fame", "Ho sete", "Ho freddo.", "Ho caldo"];
@@ -55,7 +75,9 @@ var tileContent  = ["Come stai?", "How are you?",
 var tileValues = [];
 var tileIds = [];
 var tilesTurned = 0;
-var tileFlippedCounter =0;
+var tileFlippedCounter = 0;
+var englishCard = 0;
+var italianCard = 0;
 
 Array.prototype.shuffle = function () {
 	var i = this.length, j, temp;
@@ -98,44 +120,59 @@ function tileFlip(tile, val) {
 	if (tile.innerHTML === "" && tileValues.length < 2) {
 		//tile class to be image
 		//.innerHtml to = val
-		tile.style.backgroundImage = "none";
 		tile.style.background = 'white';
 		tile.innerHTML = val;
-		if (tileValues.length = 0) {
-				tileValues.push(val);
-				tileIds.push(tile.id);
-		}
-		else if (tileValues.length == 1) {
-				tileValues.push(val);
-				tileIds.push(tile.id);
-				//if obj.arr[i] == {
-				//for {
-					//obj.arr [i].push
-					
-					tilesTurned = 2;
-				}
+		if (tileValues.length === 0) {
+			tileValues.push(val);
+			tileIds.push(tile.id);
+		} else if (tileValues.length === 1) {
+			tileValues.push(val);
+			tileIds.push(tile.id);
+			if (englishCard.innerHTML === questions[italianCard.innerHTML]) {
+				tilesTurned += 2;
 				//clear arrays
 				tileValues = [];
 				tileIds = [];
-		}
-	else {
-		
+
+				if(tilesTurned == questions.length) {
+					alert("Board cleared .. generating new board");
+					document.getElementById('memory_board').innerHTML = "";
+					gameBoard();
+				}
+			} else {
+				function tileFlipBack() {
+		    		// Flip the 2 tiles back over
+		    		var tile_1 = document.getElementById(tileIds[0]);
+		    		var tile_2 = document.getElementById(tileIds[1]);
+		    		tile_1.style.background = "none";
+    	    		tile_1.innerHTML = "";
+		    		tile_2.style.background = "none";
+    	    		tile_2.innerHTML = "";
+		   			 // Clear both arrays
+		    		tileValues = [];
+    	    		tileIds = [];
+    	    	}
+				setTimeout(tileFlipBack, 1000);
+			}	
+	}
+}
+}
+function checkAnswer() {
+	//console.log("checkAnswer function is loading");
+	document.querySelector(questions.index[0]).classList.add('italian');
+	if (questions.class === "italian"); {
+	//console.log(english);
+	var italian = italianCard[0].innerHTML;
+	//console.log(italian);
+	}	if (englishCard.innerHTML === questions[italianCard.innerHTML]) {
+        //console.log("There is a match.");
+    } 	else {
+        console.log("No match.");
+        tileFlipBack();
+    tileFlippedCounter = 0;
+}
 }
 
-function tileFlipBack() {
-		    // Flip the 2 tiles back over
-		    var tile_1 = document.getElementById(tileIds[0]);
-		    var tile_2 = document.getElementById(tileIds[1]);
-		    //tile_1.style.background = "none";
-    	    tile_1.innerHTML = "";
-		    //tile_2.style.background = "none";
-    	    tile_2.innerHTML = "";
-		    // Clear both arrays
-		    tileValues = [];
-    	    tileIds = [];
-		}
-	setTimeout(tileFlipBack, 700);
-	}	
 
 // assign cards as italian
 //When a card is clicked
@@ -166,17 +203,7 @@ function tileFlipBack() {
 //    two of same language, flip back
 
 
-function checkAnswer() {
-	var englishCard = 0;
-	var italianCard = 0;
-	if ( $(englishCard[0]).innerHTML == $(italianCard[0]).innerHTML) {
-        console.log("There is a match.");
-    } else {
-        console.log("No match.");
-        tileFlipBack();
-    }
-    tileFlippedCounter = 0;
-}
+
 	
 
 
