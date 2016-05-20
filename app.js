@@ -5,20 +5,6 @@ window.onload = function() {
 	addListeners();
 };
 
-// var arr = [
-// 	["Come stai", "How are you"], 
-// 	["Piacere di conosciarti", "Nice to meet you"],
-// 	["Andiamo", "Lets go"], 
-// 	["E gentile da parta sua", "That is nice of you"],
-// 	["Ciao", "Hello or Goodbye"],
-// 	["A presto", "See you soon"],
-// 	["Capisce? / Capisci?","Do you understand? (formal informal)"],
-// 	["Non m'importa.", "It doesn't matter."], 
-// 	["Ho fame", "I'm hungry"], 
-// 	["Ho sete", "I'm thirsty."], 
-// 	["Ho freddo.", "I'm cold"], 
-// 	["Ho caldo", "I'm hot"]
-// ];
 
 questions = {
 	"Come stai": "How are you",
