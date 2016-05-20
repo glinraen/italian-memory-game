@@ -8,6 +8,7 @@ Planned features include click a tile and get a phrase in English or Italian, tr
 to click pairs until the board tiles are all face-up. That is a win. There are two buttons, Start and Reset. 
 
 [User Stories and Planning]: https://trello.com/b/AVnAf7Fh/project-1-teach-yourself-italian
+[link text itself]: http://www.reddit.com
 
 Not in this version, are "switch background" and a "switch deck of tile" buttons to add to the user experience.
 
